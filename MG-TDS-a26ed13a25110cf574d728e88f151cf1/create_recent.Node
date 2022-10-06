@@ -1,0 +1,17 @@
+Position2D
+CPUParticles2D
+AnimationPlayer
+Timer
+RayCast2D
+Line2D
+WorldEnvironment
+CollisionShape2D
+Area2D
+Sprite
+KinematicBody2D
+AnimatedSprite
+RigidBody2D
+TileMap
+Camera2D
+StaticBody2D
+LightOccluder2D
