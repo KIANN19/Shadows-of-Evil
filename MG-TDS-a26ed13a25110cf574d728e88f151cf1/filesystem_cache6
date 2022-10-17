@@ -1,18 +1,18 @@
 679959e7917290c4d1380dafd36febcc
-::res://::1665045117
-BULLET.tscn::PackedScene::1664492227::0::1::::<><>::res://Sprites/28.png<>res://Sprites/24.png<>res://Scripts/BULLET.gd
-default_env.tres::Environment::1665045089::0::1::::<><>::
-Enemy.gd::GDScript::1665042411::0::1::::<>Node2D<>::res://Enemy.tscn
-Enemy.tscn::PackedScene::1665044063::0::1::::<><>::res://Sprites/HeavyBandit_Attack_6.png<>res://Enemy.gd
-Global.gd::GDScript::1664978311::0::1::::<>Node<>::
-vägg.tres::TileSet::1664885062::0::1::::<><>::res://Sprites/white-square-png-98-images-in-collection-page-2-white-square-png-585_585.png
-::res://Scenes/::1665045089
-LaserPowerup.tscn::PackedScene::1665044768::0::1::::<><>::res://Scripts/LaserPowerup.gd
-WORDL.tscn::PackedScene::1665045089::0::1::::<><>::res://Sprites/white-square-png-98-images-in-collection-page-2-white-square-png-585_585.png<>res://Scripts/Player.gd<>res://Sprites/ .jpeg<>res://vägg.tres<>res://Enemy.tscn
-::res://Scripts/::1665044768
+::res://::1665649645
+BULLET.tscn::PackedScene::1665647800::0::1::::<><>::res://Sprites/28.png<>res://Sprites/24.png<>res://Scripts/BULLET.gd
+default_env.tres::Environment::1665649053::0::1::::<><>::
+vägg.tres::TileSet::1665476663::0::1::::<><>::res://Sprites/white-square-png-98-images-in-collection-page-2-white-square-png-585_585.png
+::res://Scenes/::1665649053
+Enemy.tscn::PackedScene::1665647800::0::1::::<><>::res://Sprites/HeavyBandit_Attack_6.png<>res://Scripts/Enemy.gd
+LaserPowerup.tscn::PackedScene::1665476064::0::1::::<><>::res://Scripts/LaserPowerup.gd
+WORDL.tscn::PackedScene::1665649053::0::1::::<><>::res://Sprites/white-square-png-98-images-in-collection-page-2-white-square-png-585_585.png<>res://Scripts/Player.gd<>res://Sprites/ .jpeg<>res://Sprites/HeavyBandit_Attack_6.png<>res://Scripts/Enemy.gd<>res://Scripts/WORDL.gd
+::res://Scripts/::1665649053
 BULLET.gd::GDScript::1664492227::0::1::::<>RigidBody2D<>::
+Enemy.gd::GDScript::1665649053::0::1::::<>KinematicBody2D<>::
 LaserPowerup.gd::GDScript::1665044768::0::1::::<>Line2D<>::
 Player.gd::GDScript::1664320454::0::1::::<>KinematicBody2D<>::res://BULLET.tscn
+WORDL.gd::GDScript::1665647800::0::1::::<>Node<>::
 ::res://Sprites/::1664323957
 24.png::StreamTexture::1664318326::1664318514::1::::<><>::
 28.png::StreamTexture::1664317545::1664318515::1::::<><>::
