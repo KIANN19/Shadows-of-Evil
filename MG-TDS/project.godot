@@ -15,7 +15,7 @@ run/main_scene="res://Scenes/WORDL.tscn"
 
 [autoload]
 
-Global="*res://Global.gd"
+Global="*res://Scripts/Global.gd"
 
 [display]
 

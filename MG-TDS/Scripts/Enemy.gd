@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	var desired_velocity := direction * 100
 	var steering = (desired_velocity - _velocity) * delta * 4
 	_velocity += steering
-	
+
 	_velocity = move_and_slide(_velocity)
 	_sprite.rotation = _velocity.angle()
 	

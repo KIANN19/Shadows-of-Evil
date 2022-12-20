@@ -12,8 +12,8 @@ extents = Vector2( 2.5, 27.25 )
 script = ExtResource( 1 )
 path_to_player = NodePath("../../../Player")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 30, 2.5 )
+[node name="Collision" type="CollisionShape2D" parent="."]
+scale = Vector2( 32.0451, 2.92 )
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -28,7 +28,7 @@ autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Kill" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2( 8, 8 )
 shape = SubResource( 5 )
 

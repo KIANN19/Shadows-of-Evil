@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/white-square-png-98-images-in-collection-page-2-white-square-png-585_585.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/WORDL.gd" type="Script" id=4]
 
 [sub_resource type="NavigationPolygon" id=4]
 vertices = PoolVector2Array( -38, -2553, 3147, -2540, 3115, 2481, 115, 2506, -3161, 2508, -3172, -2560 )
@@ -10,7 +11,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
 outlines = [ PoolVector2Array( -3172, -2560, -3161, 2508, 115, 2506, 3115, 2481, 3147, -2540, -38, -2553 ) ]
 
 [node name="WORDL" type="Node2D"]
-position = Vector2( 542, 304 )
+script = ExtResource( 4 )
 
 [node name="Bakgrund 1" type="Sprite" parent="."]
 modulate = Color( 0.298039, 0.0470588, 0.0470588, 1 )
@@ -37,3 +38,9 @@ navpoly = SubResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -211, 21 )
+
+[node name="Enemy_spawn_timer" type="Timer" parent="."]
+wait_time = 0.735
+autostart = true
+
+[connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_Enemy_spawn_timer_timeout"]
