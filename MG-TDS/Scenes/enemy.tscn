@@ -17,7 +17,7 @@ scale = Vector2( 32.0451, 2.92 )
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.299569, 0.3 )
 texture = ExtResource( 2 )
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

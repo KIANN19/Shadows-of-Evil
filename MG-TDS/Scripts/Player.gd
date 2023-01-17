@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 var movespeed = 300 
-var bullet_speed = 700
-var fire_rate = 0.3
+var bullet_speed = 800
+var fire_rate = 0.2
 
 var bullet = preload("res://Scenes/BULLET.tscn")
 var can_fire = true
