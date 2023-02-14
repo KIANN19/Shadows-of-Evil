@@ -148,8 +148,9 @@ smoothing_enabled = true
 smoothing_speed = 2.0
 
 [node name="Light2D" type="Light2D" parent="."]
-scale = Vector2( 2.5, 2.5 )
+position = Vector2( -48, 0 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 shadow_enabled = true
 
-[connection signal="area_entered" from="Sprite/Slice" to="." method="_on_Slice_area_entered"]
+[connection signal="body_entered" from="Sprite/Slice" to="." method="_on_Slice_body_entered"]

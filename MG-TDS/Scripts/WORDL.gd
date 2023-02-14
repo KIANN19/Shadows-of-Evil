@@ -1,4 +1,5 @@
 extends Node2D
+
 const WIDTH = 1024
 const HEIGHT = 600
 
@@ -21,3 +22,7 @@ func _on_Enemy_spawn_timer_timeout():
 	else:
 		enemy.global_position = player.global_position + Vector2(rand_range(-WIDTH/2, WIDTH/2), HEIGHT/2 + 20)
 	$Navigation2D/NavigationPolygonInstance.add_child(enemy)
+	
+func _add_point():
+	$CanvasLayer/Label.kills += 1
+		

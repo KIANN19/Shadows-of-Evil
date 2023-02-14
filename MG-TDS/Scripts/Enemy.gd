@@ -29,7 +29,10 @@ func _physics_process(delta: float) -> void:
 func _update_pathfinding() -> void:
 	_agent.set_target_location(_player.global_position)
 
-
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Bullet"): 
 		queue_free()
+		
+func _exit_tree():
+	get_tree().current_scene._add_point()
+	

@@ -5,10 +5,13 @@ onready var sprite = $Sprite
 
 var movespeed = 300 
 var bullet_speed = 800
-var fire_rate = 0.04
+var fire_rate = 0.05
 
 var bullet = preload("res://Scenes/BULLET.tscn")
 var can_fire = true
+
+func _ready():
+	$Sprite/Slice/Shunt.disabled = true
 
 func _physics_process(delta):
 	var motion = Vector2()
@@ -43,3 +46,9 @@ func _physics_process(delta):
 
 	motion = motion.normalized()
 	motion = move_and_slide(motion * movespeed)
+
+func _on_Slice_body_entered(body):
+		if body.is_in_group("Enemy"): 
+			body.queue_free()
+			
+
