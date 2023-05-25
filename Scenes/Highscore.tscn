@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sprites/solid-black.jpg" type="Texture" id=2]
+[ext_resource path="res://Extra assets/its-boshy-time.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Control
+var k
+var highscore = Global.highscore
+var time = Global.time
+
+func _ready():
+	$Back.grab_focus()
+	$Hscore.text = \"Current highscore: \" + str(Global.highscore)
+
+func _on_Back_pressed():
+	k = SceneTransition.change_scene(\"res://Scenes/Menu.tscn\")
+
+#Sätter highscore till global.highscore, läser från save file.
+"
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 4 )
+
+[node name="Hscore" type="Label" parent="."]
+margin_left = 308.0
+margin_top = 166.0
+margin_right = 411.0
+margin_bottom = 183.0
+rect_scale = Vector2( 3, 3 )
+custom_fonts/font = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -3.05176e-05, 0 )
+z_index = -4096
+texture = ExtResource( 2 )
+
+[node name="Back" type="Button" parent="."]
+margin_left = 484.0
+margin_top = 399.0
+margin_right = 528.0
+margin_bottom = 419.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

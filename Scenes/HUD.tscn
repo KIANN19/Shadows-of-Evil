@@ -1,0 +1,84 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Extra assets/its-boshy-time.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/Kills.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Time.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/OrbCooldownBar.gd" type="Script" id=4]
+[ext_resource path="res://Extra assets/bloodsplat2.png" type="Texture" id=5]
+[ext_resource path="res://Extra assets/DMG1.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/SliceCooldown.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 0.980392, 0.984314, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0, 0.215686, 0.215686, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 1, 0, 0.603922, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.337255, 0.141176, 0.243137, 1 )
+
+[node name="HUD" type="CanvasLayer"]
+layer = 128
+
+[node name="Kills" type="Label" parent="."]
+margin_left = 74.0
+margin_top = 50.0
+margin_right = 200.0
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 10 )
+text = "Kills: 0"
+script = ExtResource( 2 )
+
+[node name="Time" type="Label" parent="."]
+margin_left = 778.0
+margin_top = 49.0
+margin_right = 904.0
+margin_bottom = 63.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 11 )
+script = ExtResource( 3 )
+
+[node name="SliceCooldownBar" type="ProgressBar" parent="."]
+margin_left = 774.0
+margin_top = 103.0
+margin_right = 969.0
+margin_bottom = 126.0
+custom_styles/fg = SubResource( 12 )
+custom_styles/bg = SubResource( 13 )
+max_value = 12.0
+step = 0.001
+percent_visible = false
+script = ExtResource( 7 )
+
+[node name="OrbCooldownBar" type="ProgressBar" parent="."]
+margin_left = 774.0
+margin_top = 138.0
+margin_right = 969.0
+margin_bottom = 161.0
+custom_styles/fg = SubResource( 14 )
+custom_styles/bg = SubResource( 15 )
+max_value = 7.0
+step = 0.001
+percent_visible = false
+script = ExtResource( 4 )
+
+[node name="DMG1" type="Sprite" parent="."]
+position = Vector2( 546, 316 )
+scale = Vector2( 1.61125, 1.35667 )
+texture = ExtResource( 6 )
+
+[node name="DMG2" type="Sprite" parent="."]
+position = Vector2( 482, 321 )
+scale = Vector2( 1.53229, 1.41296 )
+z_index = 500
+texture = ExtResource( 5 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tomp3.cc - You bear the mark you are cursed Looped_320kbps.mp3-efc7b99c1b580900c34b087341750d1f.mp3str"
+
+[deps]
+
+source_file="res://Music/tomp3.cc - You bear the mark you are cursed Looped_320kbps.mp3"
+dest_files=[ "res://.import/tomp3.cc - You bear the mark you are cursed Looped_320kbps.mp3-efc7b99c1b580900c34b087341750d1f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Extra assets/its-boshy-time.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Extra assets/round-change-the-giant-soundtrack-ytmp4converter.com-en.webm" type="VideoStream" id=3]
+[ext_resource path="res://Sprites/550319350_preview_ezgif.com-webp-to-png.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="GDScript" id=3]
+resource_name = "tex_bestscore"
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_left = -67.0
+margin_top = -37.0
+margin_right = 1211.0
+margin_bottom = 683.0
+rect_scale = Vector2( 1.5, 1.5 )
+stream = ExtResource( 3 )
+autoplay = true
+expand = false
+
+[node name="Sprite" type="Sprite" parent="VideoPlayer"]
+position = Vector2( 234.667, 112.667 )
+scale = Vector2( 0.666667, 0.666667 )
+texture = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 22.0
+margin_top = -252.0
+margin_right = 105.0
+margin_bottom = -141.0
+rect_scale = Vector2( 2, 2 )
+theme = SubResource( 2 )
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+margin_right = 83.0
+margin_bottom = 19.0
+focus_neighbour_top = NodePath("../ExitButton")
+custom_styles/focus = SubResource( 10 )
+text = "Start"
+flat = true
+align = 0
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+margin_top = 23.0
+margin_right = 83.0
+margin_bottom = 42.0
+custom_styles/focus = SubResource( 6 )
+text = "Options"
+flat = true
+align = 0
+
+[node name="ControlsButton" type="Button" parent="VBoxContainer"]
+margin_top = 46.0
+margin_right = 83.0
+margin_bottom = 65.0
+custom_styles/focus = SubResource( 7 )
+text = "Controls"
+flat = true
+align = 0
+
+[node name="HighscoreButton" type="Button" parent="VBoxContainer"]
+margin_top = 69.0
+margin_right = 83.0
+margin_bottom = 88.0
+custom_styles/focus = SubResource( 8 )
+text = "Highscore"
+flat = true
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+margin_top = 92.0
+margin_right = 83.0
+margin_bottom = 111.0
+focus_neighbour_bottom = NodePath("../StartButton")
+custom_styles/focus = SubResource( 9 )
+text = "Exit"
+flat = true
+align = 0
+
+[node name="Highscore" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = SubResource( 3 )
+
+[node name="Label" type="Label" parent="Highscore"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ControlsButton" to="." method="_on_ControlsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HighscoreButton" to="." method="_on_HighscoreButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
