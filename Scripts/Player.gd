@@ -24,9 +24,8 @@ var k
 var hp = 500
 var is_dead = false
 var is_colliding = false
+var Hit = false
 #Sätter spelarens liv till 500, säger att spelaren inte tar skada/kolliderar eller är död när spelet börjar.
-
-
 
 var Attack = preload("res://Scenes/Enemys.tscn")
 var bullet = preload("res://Scenes/Bullets.tscn")
@@ -127,6 +126,10 @@ func _on_Slice_body_entered(body):
 			get_parent().add_child(blood)
 			get_tree().current_scene._add_point()
 			body.queue_free()
+		if body.is_in_group("Boss"): 
+			var blood = BulletBlood.instance() as Node2D
+			blood.position = body.get_global_position()
+			get_parent().add_child(blood)
 			#Om slice träffar enmeyn, spelas bloodeffekten från en annan scen och sätter positionen för blood splatter där enemyn dör, dödar enemyn direkt.
 			
 
@@ -137,12 +140,21 @@ func _on_BallsOfDeath_body_entered(body):
 			get_parent().add_child(blood)
 			get_tree().current_scene._add_point()
 			body.queue_free()
+		if body.is_in_group("Boss"): 
+			var blood = BulletBlood.instance() as Node2D
+			blood.position = body.get_global_position()
+			get_parent().add_child(blood)
 			#Om slice träffar enmeyn, spel
-
-
-func _on_Area2D_body_entered(_body):
+			
+			
+func _on_Area2D_body_entered(body):
 	is_colliding = true
 	DamageFX.emitting = true
+	if body.is_in_group("BossBullet"): 
+		DamageFX.emitting = true
+		hp -= 50
+		healthbar.value = hp
+		
 
 func _on_Area2D_body_exited(_body):
 	is_colliding = false

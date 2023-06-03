@@ -7,15 +7,17 @@ func _ready():
 	
 func _on_Easy_pressed():
 	Global.wait_time_enemies = int(2.3)
+	Global.wait_time_bosses = int(100)
 	k = SceneTransition.change_scene("res://Scenes/World.tscn")
 
 func _on_Medium_pressed():
 	Global.wait_time_enemies = int(1.3)
-
+	Global.wait_time_bosses = int(30)
 	k = SceneTransition.change_scene("res://Scenes/World.tscn")
 
 func _on_Hard_pressed():
 	Global.wait_time_enemies = int(0.4)
+	Global.wait_time_bosses = int(15)
 	k = SceneTransition.change_scene("res://Scenes/World.tscn")
 
 func _on_Back_pressed():

@@ -5,6 +5,7 @@ var kills = 0
 var time = 0
 var highscore = 0
 var wait_time_enemies : int
+var wait_time_bosses : int
 
 
 const SAVE_FILE_PATH = "user://MG-TDS.save"
